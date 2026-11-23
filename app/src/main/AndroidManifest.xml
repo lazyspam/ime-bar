@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- only apps signed like the bar may hand phrases to the keyboard -->
+    <permission
+        android:name="com.lazyexec.imebar.permission.PHRASES"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.lazyexec.imebar.permission.PHRASES" />
+
+    <application
+        android:label="Keyboard bar"
+        android:hasCode="true"
+        android:forceQueryable="true"
+        android:allowBackup="false"
+        tools:ignore="MissingApplicationIcon">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="Keyboard bar: clipboard, phrases, shortcuts and cursor slide under any keyboard" />
+        <meta-data android:name="xposedminversion" android:value="93" />
+        <activity
+            android:name=".PhraseEditor"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize" />
+    </application>
+</manifest>

@@ -1,0 +1,9 @@
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+# release signing key: never commit it (CI gets it from secrets)
+*.jks
+*.keystore
